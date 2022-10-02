@@ -12,11 +12,11 @@ export default function Body( props: { children: React.ReactNode }) {
 
 const div = {
     wrap: styled.div`
-        position: absolute;
+        overflow-y: scroll;
         width: 100%;
-        height: calc( 100% - 60px );
+        height: calc( 100% );
         display: flex;
         justify-content: center;
-
+        z-index: 1;
     `
 }

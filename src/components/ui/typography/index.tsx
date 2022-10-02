@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import styled from "styled-components";
 
 export enum TypographySizeType {
     smaller = 0,
@@ -28,12 +29,12 @@ export default function Typography({
 }: { children: ReactNode, size?: TypographySizeType, weight?: TypographyWeightType }) {
 
     const sizes = [
-        [ 12, 10 ],
+        [ 11, 10 ],
         [ 13, 12 ],
         [ 14, 14 ],
         [ 16, 16 ],
         [ 18, 18 ],
-        [ 23, 30 ],
+        [ 30, 30 ],
     ];
 
     const weights = [
@@ -43,8 +44,19 @@ export default function Typography({
         [ 700, 700 ],
     ]
 
-    return <text style={{ fontSize: sizes[ size ][ 0 ], fontWeight: weights[ weight ][ 0 ] }}>
+    return <text.wrap style={{ fontSize: sizes[ size ][ 0 ], fontWeight: weights[ weight ][ 0 ] }}>
         {children}
-    </text>
+    </text.wrap>
 }
 
+const text = {
+    wrap: styled.text`
+        font-family: pretendard, sans-serif;
+
+font-weight: 300;
+
+font-style: normal;
+
+
+    `
+}

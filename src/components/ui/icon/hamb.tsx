@@ -17,6 +17,6 @@ const div = {
         gap: 10px;
     `,
     line: styled.div`
-        border-top: 1px solid black;
+        border-top: 1px solid ${ p => p.theme.mode.isdark? "white":"black"};
     `
 }

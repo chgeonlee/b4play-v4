@@ -9,7 +9,8 @@ export default function PageContainer( props: { children: ReactNode }) {
 
 const div = {
     wrap: styled.div`
-        max-width: 1280px;
+        max-width: 1080px;
         width: 100%;
+        overflow: visible;
     `
 }

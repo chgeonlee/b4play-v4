@@ -1,12 +1,26 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
+import useThemeStore, { ThemeType } from "../store/theme";
 
 export default function App({ Component, pageProps }) {
+
+    const themeType = useThemeStore(p => p.type);
+
     return <>
-    <GlobalStyle />
-    <Layout>
-        <Component {...pageProps} />
-    </Layout>
+        <GlobalStyle />
+        <ThemeProvider theme={{
+            mode: {
+                type: themeType,
+                isdark: themeType === ThemeType.dark,
+                islight: themeType === ThemeType.light
+            }
+        }}>
+            <Layout>
+
+                <Component {...pageProps} />
+            </Layout>
+
+        </ThemeProvider>
     </>
 }
 
